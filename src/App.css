@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App-logo {
@@ -43,7 +46,7 @@
   background-color: pink;
 }
 button {
-  margin: 15rem 13.2%;
+  margin: 50px;
   width: 100px;
   height: 35px;
   font-family: sans-serif;
