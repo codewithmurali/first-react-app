@@ -1,0 +1,107 @@
+.App {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    -webkit-animation: App-logo-spin infinite 20s linear;
+            animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@-webkit-keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.name {
+  font-family: sans-serif;
+  color: palevioletred;
+  background-color: pink;
+}
+
+button {
+  margin: 50px;
+  width: 100px;
+  height: 35px;
+  font-family: sans-serif;
+  font-weight: bolder;
+  border: solid 2px #fd0155;
+  border-radius: 5px;
+  color: #e80c55;
+  background-color: pink;
+  -webkit-box-shadow: 0.6px 0.6px 5px 0px #7c213f;
+          box-shadow: 0.6px 0.6px 5px 0px #7c213f;
+  -webkit-transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.4s;
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.4s;
+}
+
+button:hover {
+  color: pink;
+  background-color: #e80c55;
+}
+
+label {
+  padding-inline: 50%;
+  color: red;
+  font-weight: bolder;
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*# sourceMappingURL=style.css.map */
