@@ -1,39 +1,60 @@
 import "./style.css";
-import { useState } from "react";
-import Axios from "axios";
+// import { useState } from "react";
+// import Axios from "axios";
 // import { Text } from "./Text";
 // import { Task } from "./Task";
 // import { Planets } from "./planets";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { Contact } from "./pages/Contact";
+import { Navbar } from "./pages/Navbar";
+import { Menu } from "./pages/Menu";
 
 function App() {
-  const [name, setName] = useState("");
-  const [predictedAge, setPredictedAge] = useState(0);
-
-  const fetchData = () => {
-    Axios.get(`https://api.agify.io/?name=${name}`).then((res) => {
-      setPredictedAge(res.data.age);
-    });
-  };
-
   return (
     <div className="App">
-      <input
-        type="text"
-        placeholder="Name..."
-        onChange={(event) => {
-          setName(event.target.value);
-        }}
-      />
-      <button onClick={fetchData}>Predict Age</button>
-
-      <h1>Name: {predictedAge?.name}</h1>
-      <h1>Predicted Age: {predictedAge?.age} </h1>
-      <h1>Count: {predictedAge?.count}</h1>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<h1>Page not found</h1>} />
+        </Routes>
+      </Router>
     </div>
   );
 }
 
 export default App;
+
+// _____________ Fetch api data using Axios -> 2 _______________
+
+// const [name, setName] = useState("");
+// const [predictedAge, setPredictedAge] = useState(0);
+
+// const fetchData = () => {
+//   Axios.get(`https://api.agify.io/?name=${name}`).then((res) => {
+//     setPredictedAge(res.data.age);
+//   });
+// };
+
+// return (
+//   <div className="App">
+//     <input
+//       type="text"
+//       placeholder="Name..."
+//       onChange={(event) => {
+//         setName(event.target.value);
+//       }}
+//     />
+//     <button onClick={fetchData}>Predict Age</button>
+
+//     <h1>Name: {predictedAge?.name}</h1>
+//     <h1>Predicted Age: {predictedAge?.age} </h1>
+//     <h1>Count: {predictedAge?.count}</h1>
+//   </div>
+// );
 
 // _____________ Fetch api data using Axios -> 1 _______________
 
