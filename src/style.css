@@ -104,4 +104,50 @@ label {
   font-size: 100px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+form input {
+  padding: 30px;
+  margin: 30px;
+}
+
+input[type="submit"] {
+  padding: 20px;
+  margin: 0px;
+  width: auto;
+  font-family: sans-serif;
+  font-weight: bolder;
+  border: solid 2px #fd0155;
+  border-radius: 5px;
+  color: #e80c55;
+  -webkit-box-shadow: 0.6px 0.6px 5px 0px #7c213f;
+          box-shadow: 0.6px 0.6px 5px 0px #7c213f;
+  background-color: pink;
+  -webkit-transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.4s;
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.4s;
+}
+
+input[type="submit"]:hover {
+  color: pink;
+  background-color: #e80c55;
+}
+
+p {
+  color: red;
+}
 /*# sourceMappingURL=style.css.map */

@@ -1,46 +1,52 @@
+import { Form } from "./Components/Form";
 import "./style.css";
 // import { useState } from "react";
 // import Axios from "axios";
 // import { Text } from "./Text";
 // import { Task } from "./Task";
 // import { Planets } from "./planets";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { Contact } from "./pages/Contact";
-import { Navbar } from "./Navbar";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { Home } from "./pages/Home";
+// import { Contact } from "./pages/Contact";
+// import { Navbar } from "./Navbar";
 // import { Profile } from "./pages/Profile";
 // import { useState, createContext } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 // export const AppContext = createContext();
 
 function App() {
   // const [username, setUsername] = useState("Murali");
-  const client = new QueryClient({
-    defaultOptions: { queries: { refetchOnWindowFocus: true } },
-  });
 
   return (
     <div className="App">
-      <QueryClientProvider client={client}>
-        {/* <AppContext.Provider value={{ username, setUsername }}> */}
-
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            {/* <Route path="/profile" element={<Profile />} /> */}
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<h1>Page not found</h1>} />
-          </Routes>
-        </Router>
-        {/* </AppContext.Provider> */}
-      </QueryClientProvider>
+      <Form />
     </div>
   );
 }
 
 export default App;
+
+// _____________ React Query _______________
+
+// const client = new QueryClient({
+//   defaultOptions: { queries: { refetchOnWindowFocus: true } },
+// });
+
+// <QueryClientProvider client={client}>
+// {/* <AppContext.Provider value={{ username, setUsername }}> */}
+
+// <Router>
+//   <Navbar />
+//   <Routes>
+//     <Route path="/" element={<Home />} />
+//     {/* <Route path="/profile" element={<Profile />} /> */}
+//     <Route path="/contact" element={<Contact />} />
+//     <Route path="*" element={<h1>Page not found</h1>} />
+//   </Routes>
+// </Router>
+// {/* </AppContext.Provider> */}
+// </QueryClientProvider>
 
 // _____________ Fetch api data using Axios -> 2 _______________
 
