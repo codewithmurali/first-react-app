@@ -1,4 +1,4 @@
-import { Form } from "./Components/Form";
+// import { Form } from "./Components/Form";
 import "./style.css";
 // import { useState } from "react";
 // import Axios from "axios";
@@ -10,22 +10,33 @@ import "./style.css";
 // import { Contact } from "./pages/Contact";
 // import { Navbar } from "./Navbar";
 // import { Profile } from "./pages/Profile";
-// import { useState, createContext } from "react";
+import { useState } from "react";
+// import { createContext } from "react";
 // import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 // export const AppContext = createContext();
 
 function App() {
   // const [username, setUsername] = useState("Murali");
+  const [isVisible, setIsVisible] = useState(false);
 
   return (
     <div className="App">
-      <Form />
+      <button onClick={() => setIsVisible((prev) => !prev)}>
+        {isVisible ? "Hide" : "Show"}
+      </button>
+      {isVisible && <h1>Hidden Text</h1>}
     </div>
   );
 }
 
 export default App;
+
+// _______________ Forms __________________
+
+{
+  /* <Form /> */
+}
 
 // _____________ React Query _______________
 
