@@ -1,5 +1,5 @@
 // import { Form } from "./Components/Form";
-import { Cat } from "./Components/Cat";
+// import { Cat } from "./Components/Cat";
 import "./style.css";
 // import { useState } from "react";
 // import Axios from "axios";
@@ -12,32 +12,44 @@ import "./style.css";
 // import { Navbar } from "./Navbar";
 // import { Profile } from "./pages/Profile";
 // import { useState } from "react";
-import { createContext } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { useToggle } from "./useToggle";
+// import { createContext } from "react";
+// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+// import { useToggle } from "./useToggle";
+import { useCounter } from "./useCounter";
 
 // export const AppContext = createContext();
 
 function App() {
   // const [username, setUsername] = useState("Murali");
 
-  const client = new QueryClient({
-    defaultOptions: {
-      queries: {
-        refetchOnWindowFocus: true,
-      },
-    },
-  });
+  const [count, increment, decrement, zero] = useCounter(0);
   return (
-    <div className="App">
-      <QueryClientProvider client={client}>
-        <Cat />
-      </QueryClientProvider>
+    <div>
+      <div>{count}</div>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+      <button onClick={zero}>0</button>
     </div>
   );
 }
 
 export default App;
+
+// --------------- Custom Hooks to make API call -------------------
+// const client = new QueryClient({
+//   defaultOptions: {
+//     queries: {
+//       refetchOnWindowFocus: true,
+//     },
+//   },
+// });
+// return (
+//   <div className="App">
+//     <QueryClientProvider client={client}>
+//       <Cat />
+//     </QueryClientProvider>
+//   </div>
+// );
 
 // _____________ Custom Hooks with use-state_________________
 // const [isVisible1, toggle1] = useToggle();
