@@ -15,26 +15,38 @@ import "./style.css";
 // import { createContext } from "react";
 // import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 // import { useToggle } from "./useToggle";
-import { useCounter } from "./useCounter";
+// import { useCounter } from "./useCounter";
+import { Person } from "./Components/Person";
 
 // export const AppContext = createContext();
 
 function App() {
   // const [username, setUsername] = useState("Murali");
-
-  const [count, increment, decrement, zero] = useCounter(0);
   return (
     <div>
-      <div>{count}</div>
-      <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button>
-      <button onClick={zero}>0</button>
+      <Person
+        name="Murali"
+        email="muralikumar@gmail.com"
+        age={21}
+        isMarried={true}
+        friends={["Murali", "Kumar", "Madhu", "Priya "]}
+      ></Person>
     </div>
   );
 }
 
 export default App;
 
+//-----------------custom hooks for a counter application---------------
+// const [count, increment, decrement, zero] = useCounter(0);
+// return (
+//   <div>
+//     <div>{count}</div>
+//     <button onClick={increment}>+</button>
+//     <button onClick={decrement}>-</button>
+//     <button onClick={zero}>0</button>
+//   </div>
+// );
 // --------------- Custom Hooks to make API call -------------------
 // const client = new QueryClient({
 //   defaultOptions: {
