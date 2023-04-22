@@ -1,4 +1,5 @@
 // import { Form } from "./Components/Form";
+import { Cat } from "./Components/Cat";
 import "./style.css";
 // import { useState } from "react";
 // import Axios from "axios";
@@ -10,27 +11,46 @@ import "./style.css";
 // import { Contact } from "./pages/Contact";
 // import { Navbar } from "./Navbar";
 // import { Profile } from "./pages/Profile";
-import { useState } from "react";
-// import { createContext } from "react";
-// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+// import { useState } from "react";
+import { createContext } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useToggle } from "./useToggle";
 
 // export const AppContext = createContext();
 
 function App() {
   // const [username, setUsername] = useState("Murali");
-  const [isVisible, setIsVisible] = useState(false);
 
+  const client = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: true,
+      },
+    },
+  });
   return (
     <div className="App">
-      <button onClick={() => setIsVisible((prev) => !prev)}>
-        {isVisible ? "Hide" : "Show"}
-      </button>
-      {isVisible && <h1>Hidden Text</h1>}
+      <QueryClientProvider client={client}>
+        <Cat />
+      </QueryClientProvider>
     </div>
   );
 }
 
 export default App;
+
+// _____________ Custom Hooks with use-state_________________
+// const [isVisible1, toggle1] = useToggle();
+// const [isVisible2, toggle2] = useToggle();
+
+// return (
+//   <div className="App">
+//     <button onClick={toggle1}>{isVisible1 ? "Hide" : "Show"}</button>
+//     {isVisible1 && <h1>Hidden Text1</h1>}
+//     <button onClick={toggle2}>{isVisible2 ? "Hide" : "Show"}</button>
+//     {isVisible2 && <h1>Hidden Text2</h1>}
+//   </div>
+// );
 
 // _______________ Forms __________________
 
